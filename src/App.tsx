@@ -54,7 +54,7 @@ const App = () => {
 	const ref = React.useRef<StreamPlayerApi>(null);
 
 	const autoplay = useInput("autoplay", true, { type: "checkbox" });
-	const muted = useInput("muted", true, { type: "checkbox" });
+	const muted = useInput("muted", false, { type: "checkbox" });
 	const loop = useInput("loop", true, { type: "checkbox" });
 	const controls = useInput("controls", true, { type: "checkbox" });
 	const responsive = useInput("responsive", true, { type: "checkbox" });
