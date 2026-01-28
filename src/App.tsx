@@ -24,7 +24,8 @@ function useLocalStorageState<T>(key: string, defaultValue: T) {
 }
 
 type Primitive = string | number | boolean;
-
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 function useInput<T extends Primitive>(name: string, defaultValue: T, props: Omit<JSX.IntrinsicElements["input"], "value" | "checked" | "onChange">) {
 	const [value, setValue] = useLocalStorageState(name, defaultValue);
 	return {
@@ -72,8 +73,10 @@ const App = () => {
 
 	// src="4bcf13d23290043d9efb344b56200ebd"
 	return (
-		<div >
+		<div>
 			<Stream
+				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+				// @ts-expect-error
 				streamRef={ref}
 				src="47438a71918a2dcd305b1b8682053604"
 				muted={muted.value}
@@ -84,13 +87,13 @@ const App = () => {
 				volume={volume.value}
 				playbackRate={playbackRate.value}
 				onAbort={() => console.log("aborted")}
-				onCanPlay={() => console.log('onCanPlay')}
-				onCanPlayThrough={() => console.log('onCanPlayThrough')}
-				onDurationChange={() => console.log('onDurationChange')}
+				onCanPlay={() => console.log("onCanPlay")}
+				onCanPlayThrough={() => console.log("onCanPlayThrough")}
+				onDurationChange={() => console.log("onDurationChange")}
 				onEnded={() => console.log("ended")}
 				onError={(e) => console.log("error", e)}
-				onLoadedData={() => console.log('onLoadedData')}
-				onLoadStart={() => console.log('onLoadStart')}
+				onLoadedData={() => console.log("onLoadedData")}
+				onLoadStart={() => console.log("onLoadStart")}
 				onPause={() => console.log("onPause")}
 				onPlay={() => console.log("onPlay")}
 				onPlaying={() => console.log("onPlaying")}
@@ -125,6 +128,5 @@ const App = () => {
 		</div>
 	);
 };
-
 
 export default App;
