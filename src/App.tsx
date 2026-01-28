@@ -95,7 +95,7 @@ const App = () => {
 				onPlay={() => console.log("onPlay")}
 				onPlaying={() => console.log("onPlaying")}
 			/>
-			<div>
+			{/* <div>
 				{volume.input}
 				{playbackRate.input}
 				{muted.input}
@@ -121,7 +121,7 @@ const App = () => {
 				}}
 			>
 				play
-			</button>
+			</button> */}
 		</div>
 	);
 };
