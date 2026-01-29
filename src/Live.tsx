@@ -79,7 +79,7 @@ const App = () => {
     const autoplay = useInput('autoplay', true, { type: 'checkbox' });
     const muted = useInput('muted', false, { type: 'checkbox' });
     const loop = useInput('loop', true, { type: 'checkbox' });
-    const controls = useInput('controls', true, { type: 'checkbox' });
+    const controls = useInput('controls', false, { type: 'checkbox' });
     const responsive = useInput('responsive', true, { type: 'checkbox' });
     const volume = useInput('volume', 1, {
         type: 'range',
@@ -101,7 +101,7 @@ const App = () => {
                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 // @ts-expect-error
                 streamRef={ref}
-                src={liveInputUid ?? '4bcf13d23290043d9efb344b56200ebd'}
+                src={liveInputUid || "47438a71918a2dcd305b1b8682053604"}
                 muted={muted.value}
                 loop={loop.value}
                 controls={controls.value}
