@@ -72,14 +72,10 @@ const App = () => {
     const [searchParams] = useSearchParams();
     const ref = React.useRef<StreamPlayerApi>(null);
 
-    const liveInputUid = searchParams.get('liveInputUid');
-
-    console.log('liveInputUid', liveInputUid);
-
     const autoplay = useInput('autoplay', true, { type: 'checkbox' });
     const muted = useInput('muted', false, { type: 'checkbox' });
-    const loop = useInput('loop', true, { type: 'checkbox' });
-    const controls = useInput('controls', false, { type: 'checkbox' });
+    const loop = useInput('loop', false, { type: 'checkbox' });
+    const controls = useInput('controls', true, { type: 'checkbox' });
     const responsive = useInput('responsive', true, { type: 'checkbox' });
     const volume = useInput('volume', 1, {
         type: 'range',
@@ -101,7 +97,7 @@ const App = () => {
                 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
                 // @ts-expect-error
                 streamRef={ref}
-                src={liveInputUid || "47438a71918a2dcd305b1b8682053604"}
+                src={searchParams.get('liveInputUid') ?? ''}
                 muted={muted.value}
                 loop={loop.value}
                 controls={controls.value}
